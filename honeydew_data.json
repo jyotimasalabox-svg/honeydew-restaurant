@@ -1,0 +1,17 @@
+{
+  "settings": {
+    "restaurantName": "Honeydew Restaurant",
+    "tagline": "अजमेर का ऐतिहासिक स्वाद • 1970 से निरंतर सेवा",
+    "phone": "+91 94140 12345",
+    "whatsapp": "919414012345",
+    "address": "स्टेशन रोड, रामगंज, रेलवे स्टेशन के ठीक सामने, अजमेर, राजस्थान - 305001",
+    "bookingFee": 150,
+    "upiId": "honeydew.ajmer@okaxis",
+    "upiName": "Honeydew Restaurant Ajmer",
+    "adminUser": "admin",
+    "adminPass": "honeydew@123",
+    "timings": "सुबह 11:00 AM से रात 11:30 PM (सातों दिन)",
+    "bannerNotice": "रेलवे यात्रियों व दरगाह आने वाले श्रद्धालुओं के लिए स्पेशल प्री-ऑर्डर व फास्ट डिलीवरी सुविधा उपलब्ध है।"
+  },
+  "bookings": []
+}

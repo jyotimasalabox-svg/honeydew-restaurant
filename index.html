@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Honeydew Restaurant, Ajmer | Authentic Heritage Dining • Table & Event Booking</title>
+  
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Iconic Honeydew Restaurant directly opposite Ajmer Junction Railway Station. Online table reservation, grand wedding & birthday party bookings, digital menu, and train passenger pre-orders.">
+  <meta name="keywords" content="Honeydew Restaurant Ajmer, Ajmer Railway Station restaurant, Table booking Ajmer, Wedding banquet Ajmer, Birthday party hall Ajmer, Mughlai food, Pure veg restaurant">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Rose Petal Shower Canvas -->
+  <canvas id="petalCanvas"></canvas>
+
+  <!-- ==========================================================================
+       TOP ANNOUNCEMENT BAR & 3D MAHADEV SHRINE
+       ========================================================================== -->
+  <header class="top-notice-bar">
+    <div class="container top-notice-inner">
+      
+      <!-- Notice Ticker -->
+      <div class="notice-left">
+        <i class="fa-solid fa-train-subway train-pulse-icon"></i>
+        <span><strong>Traveler & Tourist Special:</strong> Pre-order meals & reserve tables before reaching Ajmer Junction — Zero Waiting Time!</span>
+      </div>
+
+      <!-- Divine 3D Mahadev Shrine Header Icon -->
+      <div class="mahadev-divine-shrine" id="mahadevShrineBtn" title="Click for Divine Rose Petal Shower">
+        <div class="mahadev-murti-avatar">
+          <img src="assets/mahadev-3d.jpg" alt="3D Mahadev Idol" id="mahadevMurtiImg">
+        </div>
+        <div class="mahadev-badge-info">
+          <span class="mahadev-badge-title">🕉️ Har Har Mahadev <i class="fa-solid fa-sparkles" style="color:#fef08a; font-size:0.75rem;"></i></span>
+          <span class="mahadev-badge-sub"><i class="fa-solid fa-fan"></i> Flower Shower</span>
+        </div>
+      </div>
+
+      <!-- Quick Contact Info -->
+      <div class="top-contacts">
+        <a href="tel:+919414012345" id="topPhoneLink"><i class="fa-solid fa-phone"></i> +91 94140 12345</a>
+        <a href="https://wa.me/919414012345" target="_blank" id="topWaLink"><i class="fa-brands fa-whatsapp" style="color:#22c55e;"></i> WhatsApp Support</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       STICKY NAVIGATION BAR
+       ========================================================================== -->
+  <nav class="site-navbar">
+    <div class="container navbar-inner">
+      
+      <!-- Brand Logo -->
+      <a href="#home" class="brand-logo-area">
+        <div class="brand-emblem">
+          <i class="fa-solid fa-crown"></i>
+        </div>
+        <div class="brand-text-block">
+          <h2>Honeydew</h2>
+          <span>Restaurant • Ajmer (Est. 1970)</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#home" class="active">Home</a></li>
+        <li><a href="#menu">Digital Menu</a></li>
+        <li><a href="#party-booking">Parties & Weddings</a></li>
+        <li><a href="#booking">Table Booking</a></li>
+        <li><a href="#location">Location</a></li>
+        <li><a href="#heritage">About Us</a></li>
+      </ul>
+
+      <!-- Action Buttons -->
+      <div class="nav-actions">
+        <!-- Pre-order Cart Button -->
+        <button class="cart-icon-btn" id="navCartBtn" title="View Pre-order Cart">
+          <i class="fa-solid fa-utensils"></i>
+          <span class="cart-badge-count" id="cartBadge">0</span>
+        </button>
+
+        <!-- Book Party CTA -->
+        <a href="#party-booking" class="btn btn-gold btn-sm nav-party-cta">
+          <i class="fa-solid fa-champagne-glasses"></i> Book Party
+        </a>
+
+        <!-- Admin Portal Link -->
+        <a href="/admin" class="btn btn-outline-gold btn-sm nav-admin-link" title="Manager Portal (/admin)">
+          <i class="fa-solid fa-lock"></i> /admin
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="mobile-menu-toggle" id="mobileMenuBtn" aria-label="Toggle navigation">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+
+    </div>
+  </nav>
+
+  <!-- ==========================================================================
+       HERO BANNER SECTION
+       ========================================================================== -->
+  <section class="hero-section" id="home">
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-tag">
+          <i class="fa-solid fa-award" style="color: #fef08a;"></i>
+          <span>Ajmer's Iconic Heritage Culinary Landmark Since 1970</span>
+        </div>
+        <h1 class="hero-title">
+          Flavors That Touch Your Soul, <br>
+          <span class="gold-gradient-text">Right Opposite Ajmer Railway Station</span>
+        </h1>
+        <p class="hero-desc">
+          Welcoming pilgrims of Khwaja Gharib Nawaz Dargah, travelers to holy Pushkar, and railway passengers with authentic Royal Mughlai, Pure Vegetarian cuisines, Royal Sweets, Fresh Juices & Grand Event Celebrations.
+        </p>
+        
+        <div class="hero-cta-group">
+          <a href="#party-booking" class="btn btn-maroon"><i class="fa-solid fa-cake-candles"></i> 🎉 Book Wedding & Birthday Party</a>
+          <a href="#booking" class="btn btn-gold"><i class="fa-solid fa-chair"></i> Reserve a Table</a>
+          <a href="#menu" class="btn btn-outline-gold"><i class="fa-solid fa-book-open"></i> Explore Digital Menu</a>
+        </div>
+
+        <!-- Tourist Highlights Bar -->
+        <div class="tourist-highlights-bar">
+          <div class="highlight-pill-item">
+            <div class="highlight-icon-box"><i class="fa-solid fa-train"></i></div>
+            <div class="highlight-info">
+              <h4>100m from Ajmer Junction</h4>
+              <p>1 Min Walk from Station Gate 1</p>
+            </div>
+          </div>
+
+          <div class="highlight-pill-item">
+            <div class="highlight-icon-box"><i class="fa-solid fa-mosque"></i></div>
+            <div class="highlight-info">
+              <h4>1.8 km to Dargah Sharif</h4>
+              <p>7 Mins Drive by Cab or E-Rickshaw</p>
+            </div>
+          </div>
+
+          <div class="highlight-pill-item">
+            <div class="highlight-icon-box"><i class="fa-solid fa-clock-fast"></i></div>
+            <div class="highlight-info">
+              <h4>Train Passenger Pre-Orders</h4>
+              <p>Fresh Hot Food Ready on Arrival</p>
+            </div>
+          </div>
+
+          <div class="highlight-pill-item">
+            <div class="highlight-icon-box"><i class="fa-solid fa-qrcode"></i></div>
+            <div class="highlight-info">
+              <h4>Digital UPI & QR Payments</h4>
+              <p>GPay, PhonePe, Paytm, Cards</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       TRAIN PASSENGER EXPRESS MEAL ALERT
+       ========================================================================== -->
+  <section class="traveler-alert-section">
+    <div class="container">
+      <div class="traveler-promo-card">
+        <div class="promo-text-wrap">
+          <span class="promo-badge"><i class="fa-solid fa-bolt"></i> Zero-Wait Express Service</span>
+          <h3>Arriving by train or visiting Ajmer today?</h3>
+          <p>
+            Pre-order your favorite dishes before reaching the station. No queues, no waiting—your table and fresh steaming hot food will be ready the moment you walk in!
+          </p>
+        </div>
+        <div>
+          <a href="#booking" class="btn btn-gold"><i class="fa-solid fa-utensils"></i> Pre-Order Meals & Reserve Table</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       DIGITAL MENU SECTION
+       ========================================================================== -->
+  <section class="menu-section" id="menu">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-subtitle">A World of Exquisite Flavors</span>
+        <h2 class="section-title">Our Master Digital Menu</h2>
+        <p class="section-desc">
+          Royal Mughlai Non-Veg, Pure Vegetarian specialties, Royal Sweets, and Fresh Juices—explore each dedicated menu and pre-order seamlessly.
+        </p>
+      </div>
+
+      <!-- 4 Grand Distinct Menu Showcase Pillars (Non-Veg, Veg, Sweets, Juices) -->
+      <div class="menu-four-pillars">
+        <!-- Pillar 1: Non-Veg -->
+        <div class="menu-pillar-card" onclick="filterByPillar('nonveg')">
+          <img src="assets/dishes/pillar-nonveg.jpg" class="pillar-bg-img" alt="Royal Non-Veg">
+          <div class="pillar-content-overlay">
+            <div>
+              <span class="pillar-badge badge-nonveg"><i class="fa-solid fa-drumstick-bite"></i> Non-Veg Specials</span>
+              <div class="pillar-title-group">
+                <h3>🥩 Royal Non-Veg Menu</h3>
+                <p>Mutton Rogan Josh, Chicken Dum Biryani, Butter Chicken, Seekh Kebabs & Tandoori Murgh.</p>
+              </div>
+            </div>
+            <div class="pillar-footer-btn">
+              <span>Explore Non-Veg Dishes</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 2: Pure Veg -->
+        <div class="menu-pillar-card" onclick="filterByPillar('veg')">
+          <img src="assets/dishes/pillar-veg.jpg" class="pillar-bg-img" alt="Pure Vegetarian">
+          <div class="pillar-content-overlay">
+            <div>
+              <span class="pillar-badge badge-veg"><i class="fa-solid fa-leaf"></i> 100% Pure Veg</span>
+              <div class="pillar-title-group">
+                <h3>🥦 Pure Vegetarian Menu</h3>
+                <p>Amritsari Dal Makhani, Paneer Butter Masala, Rajasthani Gatta Curry & Royal Malai Kofta.</p>
+              </div>
+            </div>
+            <div class="pillar-footer-btn">
+              <span>Explore Pure Veg Dishes</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 3: Royal Sweets -->
+        <div class="menu-pillar-card" onclick="filterByPillar('sweets')">
+          <img src="assets/dishes/pillar-sweets.jpg" class="pillar-bg-img" alt="Royal Sweets">
+          <div class="pillar-content-overlay">
+            <div>
+              <span class="pillar-badge badge-sweets"><i class="fa-solid fa-cake-candles"></i> Royal Sweet Treats</span>
+              <div class="pillar-title-group">
+                <h3>🍮 Royal Sweets & Desserts</h3>
+                <p>Ajmeri Kulfi Falooda with Rabdi, Hot Gulab Jamun, Shahi Tukda, Rasmalai & Desi Ghee Halwa.</p>
+              </div>
+            </div>
+            <div class="pillar-footer-btn">
+              <span>Explore Sweets & Desserts</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+
+        <!-- Pillar 4: Fresh Juices -->
+        <div class="menu-pillar-card" onclick="filterByPillar('juices')">
+          <img src="assets/dishes/pillar-juices.jpg" class="pillar-bg-img" alt="Fresh Juices">
+          <div class="pillar-content-overlay">
+            <div>
+              <span class="pillar-badge badge-juices"><i class="fa-solid fa-wine-glass"></i> Fresh & Refreshing</span>
+              <div class="pillar-title-group">
+                <h3>🥤 Fresh Juices & Shakes</h3>
+                <p>Kulhad Malai Lassi, Pure Pomegranate Juice, Mosambi, Mango Mastani & Virgin Mojito.</p>
+              </div>
+            </div>
+            <div class="pillar-footer-btn">
+              <span>Explore Juices & Shakes</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Menu Controls -->
+      <div class="menu-controls-wrapper">
+        <div class="menu-search-filter-row">
+          <!-- Live Search Bar -->
+          <div class="search-box-input">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="menuSearchInput" placeholder="Search dishes (e.g. Biryani, Paneer, Kulfi, Lassi, Mutton)...">
+          </div>
+
+          <!-- Veg / Non-Veg / Sweets / Juices Filter Toggles -->
+          <div class="veg-filter-toggles">
+            <button class="filter-toggle-btn active" data-diet="all">
+              <i class="fa-solid fa-border-all"></i> All Menu
+            </button>
+            <button class="filter-toggle-btn" data-diet="non-veg">
+              <span class="diet-dot non-veg" style="position:static; width:14px; height:14px;"></span> Non-Veg
+            </button>
+            <button class="filter-toggle-btn" data-diet="veg">
+              <span class="diet-dot veg" style="position:static; width:14px; height:14px;"></span> Pure Veg
+            </button>
+            <button class="filter-toggle-btn" data-diet="sweets">
+              <i class="fa-solid fa-cake-candles" style="color:#fde68a;"></i> Royal Sweets
+            </button>
+            <button class="filter-toggle-btn" data-diet="juices">
+              <i class="fa-solid fa-wine-glass" style="color:#7dd3fc;"></i> Fresh Juices
+            </button>
+          </div>
+        </div>
+
+        <!-- Category Pills -->
+        <div class="category-pills-bar" id="categoryPillsContainer">
+          <!-- Dynamically generated via JS -->
+        </div>
+      </div>
+
+      <!-- Menu Cards Grid -->
+      <div class="menu-items-grid" id="menuGridContainer">
+        <!-- Dynamically populated via app.js -->
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       WEDDING & BIRTHDAY PARTY CELEBRATION BOOKING SECTION
+       ========================================================================== -->
+  <section class="party-booking-section" id="party-booking">
+    <div class="container">
+      
+      <div class="section-head">
+        <span class="section-subtitle"><i class="fa-solid fa-crown" style="color:var(--primary-gold);"></i> Weddings • Birthdays • Anniversaries • Family Events</span>
+        <h2 class="section-title">🎉 Wedding & Birthday Party Celebrations</h2>
+        <p class="section-desc">
+          Celebrate your life's most cherished milestones at Honeydew Restaurant, Ajmer! Featuring grand air-conditioned banquet halls, a heritage rooftop lounge, state-of-the-art DJ sound, custom balloon & floral decor, plus complete royal catering across Non-Veg, Pure Veg, Sweets & Fresh Juices.
+        </p>
+      </div>
+
+      <!-- 4 Occasion Types Grid -->
+      <div class="party-occasions-grid" id="partyOccasionsGrid">
+        <!-- Dynamically rendered via app.js -->
+      </div>
+
+      <!-- Party Catering Packages Showcase -->
+      <div class="party-packages-section-title">
+        <span class="section-subtitle">Exquisite Catering Options</span>
+        <h3 style="font-size:1.8rem; color:#fff; font-family:var(--font-heading);">
+          Popular Party & Wedding Catering Packages
+        </h3>
+        <p style="color:var(--text-muted); font-size:0.95rem; margin-top:0.35rem;">
+          Budget-friendly per-plate rates • Starters, main course, tandoori breads, royal sweets & fruit juices included
+        </p>
+      </div>
+
+      <div class="party-packages-grid" id="partyPackagesGrid">
+        <!-- Dynamically populated via app.js -->
+      </div>
+
+      <!-- Party Booking Wizard & Realtime Cost Estimator -->
+      <div class="party-wizard-card">
+        <div class="party-wizard-grid">
+          
+          <!-- Left: Party Booking Details Form -->
+          <form id="partyBookingForm" class="party-form-area">
+            
+            <h3 style="color:#fef08a; font-size:1.3rem; margin-bottom:1.2rem; display:flex; align-items:center; gap:0.6rem;">
+              <i class="fa-solid fa-calendar-star" style="color:var(--primary-gold);"></i> 1. Organizer & Event Details
+            </h3>
+
+            <div class="form-group-row">
+              <div class="form-control-item">
+                <label for="partyCustName"><i class="fa-solid fa-user"></i> Organizer / Customer Name *</label>
+                <input type="text" id="partyCustName" required placeholder="e.g. Rajesh Sharma / Irfan Khan">
+              </div>
+              <div class="form-control-item">
+                <label for="partyCustPhone"><i class="fa-solid fa-phone"></i> Mobile Number (WhatsApp) *</label>
+                <input type="tel" id="partyCustPhone" required placeholder="e.g. 9829012345">
+              </div>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-control-item">
+                <label for="partyCustEmail"><i class="fa-solid fa-envelope"></i> Email Address (Optional)</label>
+                <input type="email" id="partyCustEmail" placeholder="e.g. myparty@gmail.com">
+              </div>
+              <div class="form-control-item">
+                <label for="partyOccasionSelect"><i class="fa-solid fa-champagne-glasses"></i> Event Occasion *</label>
+                <select id="partyOccasionSelect" required>
+                  <option value="wedding">💍 Wedding & Reception (विवाह समारोह)</option>
+                  <option value="birthday" selected>🎂 Birthday Celebration (जन्मदिन पार्टी)</option>
+                  <option value="engagement">💎 Engagement Ceremony (सगाई व रिंग सेरेमनी)</option>
+                  <option value="anniversary">🥂 Wedding Anniversary (विवाह वर्षगांठ)</option>
+                  <option value="kitty">🎉 Kitty Party / Family Gathering (पारिवारिक उत्सव)</option>
+                </select>
+              </div>
+            </div>
+
+            <h3 style="color:#fef08a; font-size:1.3rem; margin:1.5rem 0 1.2rem; display:flex; align-items:center; gap:0.6rem;">
+              <i class="fa-solid fa-building-columns" style="color:var(--primary-gold);"></i> 2. Hall / Venue & Catering Package
+            </h3>
+
+            <div class="form-group-row">
+              <div class="form-control-item">
+                <label for="partyPackageSelect"><i class="fa-solid fa-box-open"></i> Choose Catering Package *</label>
+                <select id="partyPackageSelect" required>
+                  <option value="pkg-birthday-bash" selected>Dhamaka Birthday Bash Package (₹399 / guest)</option>
+                  <option value="pkg-celebration-silver">Premium Celebration Buffet (₹499 / guest)</option>
+                  <option value="pkg-wedding-royal">Royal Wedding Grand Feast (₹699 / guest)</option>
+                  <option value="pkg-custom">Custom Menu (Personalized on Call)</option>
+                </select>
+              </div>
+
+              <div class="form-control-item">
+                <label for="partyVenueSelect"><i class="fa-solid fa-hotel"></i> Party Hall / Venue *</label>
+                <select id="partyVenueSelect" required>
+                  <option value="ac-celebration-hall" selected>Royal AC Celebration Hall (20-70 Guests, Venue Fee ₹2,000)</option>
+                  <option value="banquet-hall">Royal Heritage Banquet Hall (50-300 Guests, Venue Fee ₹5,000)</option>
+                  <option value="rooftop-lounge">Heritage Rooftop Party Lounge (30-120 Guests, Venue Fee ₹3,500)</option>
+                  <option value="vip-private-cabin">VIP Private Dining Cabin (10-25 Guests, Venue Fee ₹1,000)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-control-item">
+                <label for="partyDate"><i class="fa-solid fa-calendar-day"></i> Event Date *</label>
+                <input type="date" id="partyDate" required>
+              </div>
+
+              <div class="form-control-item">
+                <label for="partyTimeSlot"><i class="fa-solid fa-clock"></i> Time Slot *</label>
+                <select id="partyTimeSlot" required>
+                  <option value="12:00 PM - 04:00 PM (Afternoon Lunch Party)">Afternoon Lunch Party (12:00 PM - 04:00 PM)</option>
+                  <option value="07:00 PM - 11:30 PM (Evening Dinner Party)" selected>Evening Dinner Party (07:00 PM - 11:30 PM)</option>
+                  <option value="11:00 AM - 11:00 PM (Full Day Grand Event)">Full Day Grand Event (11:00 AM - 11:00 PM)</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-control-item" style="margin-bottom:1.5rem;">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.4rem;">
+                <label for="partyGuestsSlider"><i class="fa-solid fa-users"></i> Expected Number of Guests *</label>
+                <span id="partyGuestsDisplay" style="color:#fef08a; font-weight:700; font-size:1.1rem;">35 Guests</span>
+              </div>
+              <input type="range" id="partyGuestsSlider" min="15" max="350" step="5" value="35" style="width:100%; accent-color:var(--primary-gold); cursor:pointer;">
+              <div style="display:flex; justify-content:space-between; font-size:0.75rem; color:var(--text-muted); margin-top:0.25rem;">
+                <span>15 Guests</span>
+                <span>100 Guests</span>
+                <span>200 Guests</span>
+                <span>350+ Guests</span>
+              </div>
+            </div>
+
+            <h3 style="color:#fef08a; font-size:1.3rem; margin:1.5rem 0 1.2rem; display:flex; align-items:center; gap:0.6rem;">
+              <i class="fa-solid fa-sparkles" style="color:var(--primary-gold);"></i> 3. Food Preference & Add-On Services
+            </h3>
+
+            <div class="form-control-item">
+              <label><i class="fa-solid fa-utensils"></i> Catering Menu Preference (Food Style):</label>
+              <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:0.6rem; margin-top:0.4rem;">
+                <label class="service-card-check active">
+                  <input type="radio" name="partyFoodPreference" value="veg" checked>
+                  <span>🥦 100% Pure Vegetarian Menu</span>
+                </label>
+                <label class="service-card-check">
+                  <input type="radio" name="partyFoodPreference" value="mix">
+                  <span>🥩 Non-Veg + Veg Mixed Grand Menu</span>
+                </label>
+              </div>
+            </div>
+
+            <div class="form-control-item" style="margin-top:1.25rem;">
+              <label><i class="fa-solid fa-wand-magic-sparkles"></i> Additional Services (Select as needed):</label>
+              <div class="party-services-grid" id="partyServicesCheckboxes">
+                <!-- Checkboxes populated via app.js -->
+              </div>
+            </div>
+
+            <div class="form-control-item" style="margin-top:1.25rem;">
+              <label for="partyNotes"><i class="fa-solid fa-comment-dots"></i> Special Instructions or Event Theme:</label>
+              <textarea id="partyNotes" rows="2" placeholder="e.g. 1st Birthday theme, stage couch for couple, live fruit juice counter..."></textarea>
+            </div>
+
+            <div style="margin-top:2rem;">
+              <button type="submit" class="btn btn-gold" style="width:100%; font-size:1.15rem; padding:1rem; box-shadow:0 6px 25px rgba(212,175,55,0.4);">
+                <i class="fa-solid fa-champagne-glasses"></i> Book Event Hall & Catering (Proceed to Advance Token)
+              </button>
+            </div>
+
+          </form>
+
+          <!-- Right: Real-time Live Cost Estimate Sidebar -->
+          <div class="party-estimate-sidebar">
+            <div class="party-estimate-head">
+              <h3><i class="fa-solid fa-calculator" style="color:var(--primary-gold);"></i> Estimated Party Budget Breakdown</h3>
+              <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.25rem;">
+                Instant automated calculation based on your selection
+              </p>
+            </div>
+
+            <div class="party-calc-row">
+              <span>Event:</span>
+              <strong id="estOccasionText">Birthday Celebration</strong>
+            </div>
+
+            <div class="party-calc-row">
+              <span>Total Guests:</span>
+              <strong id="estGuestsCountText">35 Guests</strong>
+            </div>
+
+            <div class="party-calc-row">
+              <span>Selected Package:</span>
+              <strong id="estPackageNameText">Dhamaka Birthday Bash</strong>
+            </div>
+
+            <div class="party-calc-row">
+              <span>Per Guest Rate:</span>
+              <strong id="estPerPersonPrice">₹399 / guest</strong>
+            </div>
+
+            <div class="party-calc-row" style="border-top:1px dashed rgba(255,255,255,0.1); padding-top:0.6rem; margin-top:0.3rem;">
+              <span>Food Subtotal:</span>
+              <strong id="estFoodSubtotal" style="color:#fff;">₹13,965</strong>
+            </div>
+
+            <div class="party-calc-row">
+              <span>Hall / Venue Fee:</span>
+              <strong id="estVenueFeeText">₹2,000</strong>
+            </div>
+
+            <div class="party-calc-row">
+              <span>Add-On Services:</span>
+              <strong id="estServicesFeeText">₹0</strong>
+            </div>
+
+            <!-- Total Estimated Row -->
+            <div class="party-total-row">
+              <span>Estimated Total Budget:</span>
+              <div class="party-total-amount" id="estGrandTotalText">₹15,965</div>
+            </div>
+
+            <div class="party-advance-highlight">
+              <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.3rem;">
+                <span style="font-weight:700; color:#fef08a;">Advance Token Booking Fee:</span>
+                <span style="font-size:1.25rem; font-weight:800; color:#fef08a;" id="estAdvanceFeeText">₹1,000</span>
+              </div>
+              <p style="font-size:0.78rem; color:#d6d3d1; margin:0;">
+                <i class="fa-solid fa-circle-check" style="color:#34d399;"></i> <strong>100% Adjustable:</strong> This advance token amount will be completely deducted from your final party bill.
+              </p>
+            </div>
+
+            <a href="https://wa.me/919414012345?text=Hello%20Honeydew%20Restaurant!%20I%20would%20like%20to%20inquire%20about%20Wedding%20/%20Birthday%20Party%20Booking." target="_blank" class="btn btn-outline-gold btn-sm" style="width:100%;">
+              <i class="fa-brands fa-whatsapp" style="color:#22c55e;"></i> Chat with Party Manager on WhatsApp
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       TABLE BOOKING & PRE-ORDER WIZARD SECTION
+       ========================================================================== -->
+  <section class="booking-section" id="booking">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-subtitle">Advance Dining & Seat Reservation</span>
+        <h2 class="section-title">Table Reservation & Pre-Order Service</h2>
+        <p class="section-desc">
+          Reserve your preferred dining table in advance with a small adjustable booking fee. 100% of this fee is credited and deducted from your final dining bill upon arrival.
+        </p>
+      </div>
+
+      <div class="booking-wizard-wrapper">
+        
+        <!-- Left: Customer Details & Preferences Form -->
+        <form id="bookingForm" class="booking-form-area">
+          
+          <h3 style="color:#fef08a; font-size:1.25rem; margin-bottom:1.2rem; display:flex; align-items:center; gap:0.5rem;">
+            <i class="fa-solid fa-user-pen" style="color:var(--primary-gold);"></i> 1. Personal & Travel Details
+          </h3>
+
+          <div class="form-group-row">
+            <div class="form-control-item">
+              <label for="custName"><i class="fa-solid fa-user"></i> Full Name *</label>
+              <input type="text" id="custName" required placeholder="e.g. Rajesh Sharma">
+            </div>
+            <div class="form-control-item">
+              <label for="custPhone"><i class="fa-solid fa-phone"></i> Mobile Number (WhatsApp) *</label>
+              <input type="tel" id="custPhone" required placeholder="e.g. 9829012345">
+            </div>
+          </div>
+
+          <div class="form-group-row">
+            <div class="form-control-item">
+              <label for="custEmail"><i class="fa-solid fa-envelope"></i> Email Address (Optional)</label>
+              <input type="email" id="custEmail" placeholder="e.g. customer@gmail.com">
+            </div>
+            <div class="form-control-item">
+              <label for="trainDetails"><i class="fa-solid fa-train"></i> Train / Flight / Arrival Details</label>
+              <input type="text" id="trainDetails" placeholder="e.g. Shatabdi Express Train #12015">
+            </div>
+          </div>
+
+          <h3 style="color:#fef08a; font-size:1.25rem; margin:1.5rem 0 1rem; display:flex; align-items:center; gap:0.5rem;">
+            <i class="fa-solid fa-calendar-days" style="color:var(--primary-gold);"></i> 2. Dining Date, Time & Guests
+          </h3>
+
+          <div class="form-group-row">
+            <div class="form-control-item">
+              <label for="bookingDate"><i class="fa-solid fa-calendar"></i> Date of Visit *</label>
+              <input type="date" id="bookingDate" required>
+            </div>
+            <div class="form-control-item">
+              <label for="bookingTime"><i class="fa-solid fa-clock"></i> Time Slot *</label>
+              <select id="bookingTime" required>
+                <option value="12:00 PM">12:00 PM (Afternoon Lunch)</option>
+                <option value="12:30 PM">12:30 PM</option>
+                <option value="01:00 PM">01:00 PM</option>
+                <option value="01:30 PM" selected>01:30 PM</option>
+                <option value="02:00 PM">02:00 PM</option>
+                <option value="02:30 PM">02:30 PM</option>
+                <option value="03:00 PM">03:00 PM</option>
+                <option value="07:00 PM">07:00 PM (Evening Dinner)</option>
+                <option value="07:30 PM">07:30 PM</option>
+                <option value="08:00 PM">08:00 PM</option>
+                <option value="08:30 PM">08:30 PM</option>
+                <option value="09:00 PM">09:00 PM</option>
+                <option value="09:30 PM">09:30 PM</option>
+                <option value="10:00 PM">10:00 PM</option>
+                <option value="10:30 PM">10:30 PM</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-control-item">
+            <label for="guestCount"><i class="fa-solid fa-users"></i> Number of Guests *</label>
+            <select id="guestCount" required>
+              <option value="1">1 Person (Solo Diner)</option>
+              <option value="2" selected>2 Persons (Couple Table)</option>
+              <option value="3">3 Persons</option>
+              <option value="4">4 Persons (Family Table)</option>
+              <option value="5">5 Persons</option>
+              <option value="6">6 Persons (Large Family Table)</option>
+              <option value="8">8 Persons (Group Table)</option>
+              <option value="10">10+ Persons (Large Group / Party)</option>
+            </select>
+          </div>
+
+          <div class="form-control-item">
+            <label><i class="fa-solid fa-couch"></i> Seating Area Preference</label>
+            <div class="seating-areas-grid" id="seatingGrid">
+              <!-- Populated via JS -->
+            </div>
+          </div>
+
+          <div class="form-control-item">
+            <label for="specialNotes"><i class="fa-solid fa-comment-dots"></i> Special Requests & Dietary Notes</label>
+            <textarea id="specialNotes" rows="2" placeholder="e.g. Baby chair required, less spicy, train running 15 mins late..."></textarea>
+          </div>
+
+          <div style="margin-top:1.5rem;">
+            <button type="submit" class="btn btn-gold" style="width:100%; font-size:1.1rem; padding:0.9rem;">
+              <i class="fa-solid fa-lock"></i> Proceed to Advance Reservation & UPI Payment
+            </button>
+          </div>
+
+        </form>
+
+        <!-- Right: Pre-Order Summary & Fee Calculation Sidebar -->
+        <div class="order-summary-sidebar">
+          <div class="summary-header">
+            <h3><i class="fa-solid fa-receipt"></i> Pre-Order Summary</h3>
+            <p style="font-size:0.8rem; color:var(--text-muted); margin-top:0.25rem;">
+              Add dishes from the menu above so they are hot & ready when you arrive.
+            </p>
+          </div>
+
+          <!-- Pre-Ordered Dishes List -->
+          <div class="selected-dishes-list" id="cartItemsList">
+            <div class="empty-dishes-note">
+              <i class="fa-solid fa-bowl-food" style="font-size:1.8rem; color:#78716c; margin-bottom:0.5rem; display:block;"></i>
+              No dishes added to pre-order yet.<br>
+              <a href="#menu" style="color:var(--primary-gold); font-size:0.85rem; font-weight:600; text-decoration:underline;">
+                Add dishes from menu (+)
+              </a>
+            </div>
+          </div>
+
+          <!-- Food Amount Subtotal -->
+          <div style="display:flex; justify-content:space-between; font-size:0.9rem; padding:0.5rem 0; border-top:1px solid rgba(255,255,255,0.08);">
+            <span>Food Total:</span>
+            <strong id="foodSubtotalText" style="color:#fff;">₹0</strong>
+          </div>
+
+          <!-- Advance Booking Fee Box -->
+          <div class="advance-fee-box">
+            <div class="advance-fee-row">
+              <span>Advance Table Reservation Fee:</span>
+              <span id="advanceFeeText" style="color:#fef08a; font-size:1.2rem;">₹150</span>
+            </div>
+            <p class="advance-fee-note">
+              <i class="fa-solid fa-circle-check"></i> <strong>100% Adjustable:</strong> This advance fee is deducted directly from your final dining bill.
+            </p>
+          </div>
+
+          <div style="font-size:0.8rem; color:var(--text-muted); line-height:1.5;">
+            <p><i class="fa-solid fa-shield-halved" style="color:#22c55e;"></i> Secure digital transaction with instant digital token pass.</p>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       LOCATION & INTERACTIVE MAP SECTION
+       ========================================================================== -->
+  <section class="location-section" id="location">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-subtitle">Prime Central Location</span>
+        <h2 class="section-title">Our Location & How to Reach Us</h2>
+        <p class="section-desc">
+          Directly opposite Gate No. 1 of Ajmer Junction Railway Station, Station Road, Ramganj. Call us anytime for instant directions and guidance.
+        </p>
+      </div>
+
+      <div class="location-grid-layout">
+        
+        <!-- Left: Address & Directions Card -->
+        <div class="location-details-card">
+          <div>
+            <div class="landmark-item">
+              <div class="landmark-icon"><i class="fa-solid fa-location-dot"></i></div>
+              <div class="landmark-text">
+                <h4>Full Address</h4>
+                <p id="locFullAddress">Station Road, Ramganj, Directly Opposite Ajmer Junction Railway Station, Ajmer, Rajasthan - 305001</p>
+              </div>
+            </div>
+
+            <div class="landmark-item">
+              <div class="landmark-icon"><i class="fa-solid fa-train-tram"></i></div>
+              <div class="landmark-text">
+                <h4>How to Reach from Ajmer Junction?</h4>
+                <p>Exit from the main station gate (Platform 1 side) and you will see the Honeydew Restaurant landmark right across the street (1 minute walk).</p>
+              </div>
+            </div>
+
+            <div class="landmark-item">
+              <div class="landmark-icon"><i class="fa-solid fa-person-walking-luggage"></i></div>
+              <div class="landmark-text">
+                <h4>Distance from Dargah Sharif</h4>
+                <p>Only 1.8 km from Ajmer Sharif Dargah (approx. 7 to 10 minutes by e-rickshaw or taxi).</p>
+              </div>
+            </div>
+
+            <div class="landmark-item">
+              <div class="landmark-icon"><i class="fa-solid fa-clock"></i></div>
+              <div class="landmark-text">
+                <h4>Operating Hours</h4>
+                <p id="locTimingsText">11:00 AM to 11:30 PM (Monday to Sunday, Open All 7 Days)</p>
+              </div>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:0.75rem; flex-wrap:wrap; margin-top:1.5rem;">
+            <a href="https://maps.google.com/?q=Honeydew+Restaurant+Ajmer+Station+Road" target="_blank" class="btn btn-gold">
+              <i class="fa-solid fa-diamond-turn-right"></i> Start Navigation in Google Maps
+            </a>
+            <a href="tel:+919414012345" class="btn btn-outline-gold">
+              <i class="fa-solid fa-phone"></i> Call for Directions
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: Embedded Google Maps Frame -->
+        <div class="map-embed-frame">
+          <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3571.9566270601955!2d74.6367351!3d26.4526543!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x396be6e257cfda47%3A0xe979ca6d396ec2b9!2sAjmer%20Junction!5e0!3m2!1sen!2sin!4v1700000000000!5m2!1sen!2sin" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade"
+            title="Honeydew Restaurant Location Map">
+          </iframe>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       HERITAGE STORY & GUEST TESTIMONIALS
+       ========================================================================== -->
+  <section class="menu-section" id="heritage" style="background:var(--bg-dark-card); border-top:1px solid var(--border-gold);">
+    <div class="container">
+      <div class="section-head">
+        <span class="section-subtitle">Heritage & Culinary Trust</span>
+        <h2 class="section-title">Ajmer's Legendary Dining Tradition Since 1970</h2>
+        <p class="section-desc">
+          For over 50 years, Honeydew Restaurant has been the trusted dining haven for domestic & international tourists, pilgrims of Dargah Sharif, and railway travelers.
+        </p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:1.75rem;">
+        
+        <div class="dish-card" style="padding:1.5rem;">
+          <div style="color:#fbbf24; font-size:1.1rem; margin-bottom:0.75rem;">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p style="color:#e7e5e4; font-size:0.92rem; line-height:1.6; margin-bottom:1rem; font-style:italic;">
+            "Arrived from Delhi via Shatabdi Express. We pre-ordered Mutton Rogan Josh and Butter Naan directly from the Honeydew website while on the train. As we walked out of the station gate, our table was waiting and steaming hot food was served immediately. Phenomenal taste!"
+          </p>
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <div style="width:40px; height:40px; border-radius:50%; background:var(--primary-gold); color:#1a1508; display:flex; align-items:center; justify-content:center; font-weight:700;">
+              VK
+            </div>
+            <div>
+              <h4 style="font-size:0.95rem; color:#fff;">Vikas Kulshrestha</h4>
+              <span style="font-size:0.75rem; color:var(--text-muted);">New Delhi (Traveler)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card" style="padding:1.5rem;">
+          <div style="color:#fbbf24; font-size:1.1rem; margin-bottom:0.75rem;">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p style="color:#e7e5e4; font-size:0.92rem; line-height:1.6; margin-bottom:1rem; font-style:italic;">
+            "Visited for a family dinner after visiting Ajmer Sharif Dargah. The Chicken Dum Biryani and Dal Makhani were both absolutely outstanding. The AC family dining hall is peaceful, clean, and welcoming."
+          </p>
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <div style="width:40px; height:40px; border-radius:50%; background:var(--accent-emerald); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700;">
+              AK
+            </div>
+            <div>
+              <h4 style="font-size:0.95rem; color:#fff;">Asif Khan</h4>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Mumbai (Pilgrim)</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="dish-card" style="padding:1.5rem;">
+          <div style="color:#fbbf24; font-size:1.1rem; margin-bottom:0.75rem;">
+            <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+          </div>
+          <p style="color:#e7e5e4; font-size:0.92rem; line-height:1.6; margin-bottom:1rem; font-style:italic;">
+            "We stopped for lunch before heading to holy Pushkar. Their Amritsari Kulcha Thali and signature Ajmeri Kulfi Falooda were unmatched! Being right opposite the railway station made our journey so convenient."
+          </p>
+          <div style="display:flex; align-items:center; gap:0.75rem;">
+            <div style="width:40px; height:40px; border-radius:50%; background:var(--royal-maroon); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700;">
+              PS
+            </div>
+            <div>
+              <h4 style="font-size:0.95rem; color:#fff;">Priya Solanki</h4>
+              <span style="font-size:0.75rem; color:var(--text-muted);">Ahmedabad (Family Tour)</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       UPI QR PAYMENT MODAL & CONFIRMATION
+       ========================================================================== -->
+  <div class="modal-backdrop" id="paymentModal">
+    <div class="modal-dialog">
+      <div class="modal-head">
+        <h3><i class="fa-solid fa-qrcode" style="color:#fef08a;"></i> Advance Fee Payment (UPI QR)</h3>
+        <button class="modal-close-btn" id="closePaymentModalBtn">&times;</button>
+      </div>
+
+      <div class="modal-body" id="paymentModalBody">
+        
+        <!-- Step 1: Scan & Pay QR Code View -->
+        <div id="qrPayView">
+          <div class="qr-container-card">
+            <span style="font-size:0.85rem; color:#71717a; text-transform:uppercase; font-weight:600; letter-spacing:1px;">
+              Scan & Pay Using Any UPI App
+            </span>
+            <div class="qr-pay-amount" id="modalQrAmountText">₹150</div>
+            
+            <div class="qr-code-img-frame">
+              <img id="dynamicQrImage" src="" alt="UPI Payment QR Code">
+            </div>
+
+            <div class="qr-upi-id-badge">
+              <span id="modalUpiIdText">honeydew.ajmer@okaxis</span>
+              <button id="copyUpiBtn" style="background:none; border:none; cursor:pointer; color:var(--accent-amber);" title="Copy UPI ID">
+                <i class="fa-regular fa-copy"></i>
+              </button>
+            </div>
+
+            <div class="upi-apps-icons">
+              <span><i class="fa-brands fa-google-pay" style="font-size:1.4rem; color:#ea4335;"></i> GPay</span>
+              <span><i class="fa-solid fa-mobile-screen-button" style="font-size:1.2rem; color:#6739b7;"></i> PhonePe</span>
+              <span><i class="fa-solid fa-wallet" style="font-size:1.2rem; color:#00b9f5;"></i> Paytm</span>
+              <span><i class="fa-solid fa-building-columns" style="font-size:1.2rem; color:#16a34a;"></i> BHIM</span>
+            </div>
+          </div>
+
+          <div style="background:var(--bg-dark-elevated); padding:1rem; border-radius:var(--radius-sm); margin-bottom:1.25rem; border:1px solid rgba(255,255,255,0.1);">
+            <label style="display:block; font-size:0.85rem; color:#f5e7a9; margin-bottom:0.4rem; font-weight:600;">
+              <i class="fa-solid fa-receipt"></i> Enter UPI Transaction / UTR Number (Optional):
+            </label>
+            <input type="text" id="upiUtrInput" placeholder="e.g. 409823901248 (12-digit UTR)" style="width:100%; background:var(--bg-dark); border:1px solid rgba(255,255,255,0.15); border-radius:6px; padding:0.6rem; color:#fff; font-size:0.9rem;">
+          </div>
+
+          <div style="display:flex; flex-direction:column; gap:0.6rem;">
+            <button class="btn btn-gold" id="confirmPaymentBtn" style="width:100%; font-size:1.05rem;">
+              <i class="fa-solid fa-check-circle"></i> I Have Completed Payment (Verify & Confirm)
+            </button>
+            <button class="btn btn-outline-gold" id="payOnArrivalBtn" style="width:100%; font-size:0.9rem;">
+              <i class="fa-solid fa-hand-holding-dollar"></i> Pay at Restaurant Counter on Arrival
+            </button>
+          </div>
+        </div>
+
+        <!-- Step 2: Instant Booking Confirmation Ticket / Pass View -->
+        <div id="ticketConfirmationView" style="display:none;">
+          <div class="booking-ticket">
+            <div class="ticket-header">
+              <span style="font-size:0.75rem; color:var(--primary-gold); text-transform:uppercase; letter-spacing:1px;">
+                ADVANCE SEAT RESERVATION PASS • HONEYDEW AJMER
+              </span>
+              <h2 style="font-size:1.35rem; color:#fff; margin:0.25rem 0;">Booking Confirmed Successfully!</h2>
+              <div class="ticket-token-badge" id="confirmedTokenBadge">HDW-9023</div>
+            </div>
+
+            <div class="ticket-info-grid">
+              <div class="ticket-info-item">
+                <span>Customer Name:</span>
+                <strong id="ticketCustName">-</strong>
+              </div>
+              <div class="ticket-info-item">
+                <span>Mobile Number:</span>
+                <strong id="ticketCustPhone">-</strong>
+              </div>
+              <div class="ticket-info-item">
+                <span>Date & Time:</span>
+                <strong id="ticketDateTime">-</strong>
+              </div>
+              <div class="ticket-info-item">
+                <span>Total Guests:</span>
+                <strong id="ticketGuests">-</strong>
+              </div>
+              <div class="ticket-info-item">
+                <span>Seating / Venue:</span>
+                <strong id="ticketSeating">-</strong>
+              </div>
+              <div class="ticket-info-item">
+                <span>Advance Fee Status:</span>
+                <strong id="ticketFeeStatus" style="color:#34d399;">₹150 (Paid via UPI)</strong>
+              </div>
+            </div>
+
+            <div style="border-top:1px dashed rgba(255,255,255,0.15); padding-top:0.75rem; margin-top:0.5rem; font-size:0.85rem;">
+              <span style="color:var(--text-muted); display:block; margin-bottom:0.25rem;">Pre-Ordered Dishes / Package:</span>
+              <div id="ticketPreOrderSummary" style="color:#e7e5e4;">-</div>
+            </div>
+
+            <div style="margin-top:1.25rem; display:flex; gap:0.75rem; flex-wrap:wrap;">
+              <button class="btn btn-gold btn-sm" onclick="window.print()">
+                <i class="fa-solid fa-print"></i> Print Confirmation Pass
+              </button>
+              <a href="#" id="ticketWaShareLink" target="_blank" class="btn btn-outline-gold btn-sm">
+                <i class="fa-brands fa-whatsapp"></i> Share on WhatsApp
+              </a>
+              <button class="btn btn-maroon btn-sm" id="closeTicketModalBtn">
+                <i class="fa-solid fa-check"></i> Close
+              </button>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       ADMIN PORTAL (PASSWORD PROTECTED DASHBOARD MODAL)
+       ========================================================================== -->
+  <div class="modal-backdrop" id="adminModal">
+    <div class="modal-dialog admin-modal-dialog">
+      
+      <!-- Admin Top Header Strip -->
+      <div class="admin-header-strip">
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <div style="width:36px; height:36px; border-radius:8px; background:var(--royal-maroon); border:1px solid var(--primary-gold); display:flex; align-items:center; justify-content:center; color:#fef08a;">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div>
+            <h3 style="font-size:1.15rem; color:#fff; line-height:1.2;">Honeydew Restaurant - Admin Portal</h3>
+            <span style="font-size:0.75rem; color:var(--text-muted);">Management Control Panel • Authorized Personnel Only</span>
+          </div>
+        </div>
+        <button class="modal-close-btn" id="closeAdminModalBtn">&times;</button>
+      </div>
+
+      <!-- View A: Login Form (If not authenticated) -->
+      <div id="adminLoginView" style="padding:2.5rem 1.5rem; max-width:420px; margin:0 auto; text-align:center;">
+        <div style="width:64px; height:64px; border-radius:50%; background:rgba(212,175,55,0.15); border:2px solid var(--primary-gold); display:flex; align-items:center; justify-content:center; margin:0 auto 1.25rem; color:#fef08a; font-size:1.75rem;">
+          <i class="fa-solid fa-key"></i>
+        </div>
+        <h3 style="font-size:1.35rem; color:#fff; margin-bottom:0.5rem;">Manager Authentication</h3>
+        <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1.5rem;">
+          Log in to manage bookings, digital menu pricing, and fee settings.
+        </p>
+
+        <form id="adminLoginForm">
+          <div class="form-control-item" style="text-align:left; margin-bottom:1rem;">
+            <label for="adminUsernameInput"><i class="fa-solid fa-user"></i> Username</label>
+            <input type="text" id="adminUsernameInput" required placeholder="Enter username">
+          </div>
+          <div class="form-control-item" style="text-align:left; margin-bottom:1.5rem;">
+            <label for="adminPasswordInput"><i class="fa-solid fa-lock"></i> Password</label>
+            <input type="password" id="adminPasswordInput" required placeholder="Enter password">
+          </div>
+          <button type="submit" class="btn btn-gold" style="width:100%; font-size:1rem; padding:0.85rem;">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i> Log In
+          </button>
+        </form>
+      </div>
+
+      <!-- View B: Logged-In Admin Control Dashboard -->
+      <div id="adminDashboardView" style="display:none; padding:1.25rem;">
+        
+        <!-- Navigation Tabs -->
+        <div class="admin-nav-tabs">
+          <button class="admin-tab-btn active" data-tab="tab-bookings">
+            <i class="fa-solid fa-list-check"></i> Bookings Management (<span id="adminBookingCountBadge">0</span>)
+          </button>
+          <button class="admin-tab-btn" data-tab="tab-menu">
+            <i class="fa-solid fa-utensils"></i> Menu Customization
+          </button>
+          <button class="admin-tab-btn" data-tab="tab-settings">
+            <i class="fa-solid fa-gears"></i> Restaurant & Fee Settings
+          </button>
+          <button class="admin-tab-btn" id="adminLogoutBtn" style="margin-left:auto; color:#f87171;">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+          </button>
+        </div>
+
+        <!-- TAB 1: Bookings Management -->
+        <div class="admin-tab-pane" id="tab-bookings" style="display:block; padding-top:1.25rem;">
+          
+          <!-- Quick Statistics -->
+          <div class="admin-stats-grid">
+            <div class="stat-card-box">
+              <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+              <div>
+                <div class="stat-num" id="statTotalBookings">0</div>
+                <div class="stat-label">Total Bookings</div>
+              </div>
+            </div>
+
+            <div class="stat-card-box">
+              <div class="stat-icon" style="color:#34d399;"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+              <div>
+                <div class="stat-num" id="statAdvanceCollected">₹0</div>
+                <div class="stat-label">Advance Fees Collected</div>
+              </div>
+            </div>
+
+            <div class="stat-card-box">
+              <div class="stat-icon" style="color:#60a5fa;"><i class="fa-solid fa-users"></i></div>
+              <div>
+                <div class="stat-num" id="statTotalGuests">0</div>
+                <div class="stat-label">Total Reserved Guests</div>
+              </div>
+            </div>
+
+            <div class="stat-card-box">
+              <div class="stat-icon" style="color:#fbbf24;"><i class="fa-solid fa-file-csv"></i></div>
+              <div>
+                <button class="btn btn-outline-gold btn-sm" id="exportBookingsCsvBtn">
+                  <i class="fa-solid fa-download"></i> Download CSV
+                </button>
+                <div class="stat-label" style="margin-top:0.25rem;">Excel Records</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bookings Table -->
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Token ID</th>
+                  <th>Customer Details</th>
+                  <th>Date & Time</th>
+                  <th>Guests & Seating</th>
+                  <th>Pre-Order / Package</th>
+                  <th>Advance Fee</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="adminBookingsTbody">
+                <!-- Dynamically populated via JS -->
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+        <!-- TAB 2: Menu Customization -->
+        <div class="admin-tab-pane" id="tab-menu" style="display:none; padding-top:1.25rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1rem; flex-wrap:wrap; gap:0.75rem;">
+            <h4 style="color:#fef08a; font-size:1.1rem;"><i class="fa-solid fa-bowl-food"></i> Manage Restaurant Menu Dishes & Pricing</h4>
+            <button class="btn btn-gold btn-sm" id="openAddDishFormBtn"><i class="fa-solid fa-plus"></i> Add New Dish</button>
+          </div>
+
+          <!-- Add Dish Mini Form (Hidden by default) -->
+          <div id="addDishFormWrap" style="display:none; background:var(--bg-dark-elevated); padding:1.25rem; border-radius:var(--radius-sm); border:1px solid var(--border-gold); margin-bottom:1.5rem;">
+            <h5 style="color:#fff; margin-bottom:1rem;">Add New Menu Item</h5>
+            <div class="form-group-row">
+              <div class="form-control-item">
+                <label>Dish Name *</label>
+                <input type="text" id="newDishName" placeholder="e.g. Royal Mutton Korma">
+              </div>
+              <div class="form-control-item">
+                <label>Category *</label>
+                <select id="newDishCategory">
+                  <option value="nonveg">🥩 Royal Non-Veg</option>
+                  <option value="veg" selected>🥦 Pure Vegetarian</option>
+                  <option value="sweets">🍮 Royal Sweets & Desserts</option>
+                  <option value="juices">🥤 Fresh Juices & Shakes</option>
+                  <option value="tandoor">🔥 Tandoor & Breads</option>
+                  <option value="quick">🍱 Fast Meals & Combos</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group-row">
+              <div class="form-control-item">
+                <label>Type *</label>
+                <select id="newDishType">
+                  <option value="veg">Pure Vegetarian (Veg)</option>
+                  <option value="non-veg">Non-Vegetarian (Non-Veg)</option>
+                </select>
+              </div>
+              <div class="form-control-item">
+                <label>Price (₹) *</label>
+                <input type="number" id="newDishPrice" placeholder="250">
+              </div>
+            </div>
+            <div class="form-control-item">
+              <label>Description / Ingredients</label>
+              <input type="text" id="newDishDesc" placeholder="Key ingredients and culinary highlights...">
+            </div>
+            <div class="form-control-item">
+              <label>Photo URL (Optional)</label>
+              <input type="text" id="newDishImg" placeholder="https://images.unsplash.com/...">
+            </div>
+            <div style="display:flex; gap:0.5rem;">
+              <button class="btn btn-gold btn-sm" id="saveNewDishBtn"><i class="fa-solid fa-floppy-disk"></i> Save Dish</button>
+              <button class="btn btn-outline-gold btn-sm" id="cancelAddDishBtn">Cancel</button>
+            </div>
+          </div>
+
+          <!-- Existing Dishes List Table -->
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Photo</th>
+                  <th>Dish Name</th>
+                  <th>Category</th>
+                  <th>Type</th>
+                  <th>Price (₹)</th>
+                  <th>Stock Status</th>
+                  <th>Remove</th>
+                </tr>
+              </thead>
+              <tbody id="adminMenuTableBody">
+                <!-- Dynamically populated via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 3: Restaurant Settings & Fee Control -->
+        <div class="admin-tab-pane" id="tab-settings" style="display:none; padding-top:1.25rem;">
+          <form id="adminSettingsForm" style="max-width:700px;">
+            
+            <h4 style="color:#fef08a; font-size:1.1rem; margin-bottom:1rem;">
+              <i class="fa-solid fa-sliders"></i> General Settings & Advance Fee Controls
+            </h4>
+
+            <div class="form-group-row">
+              <div class="form-control-item">
+                <label><i class="fa-solid fa-indian-rupee-sign"></i> Advance Table Booking Fee (₹) *</label>
+                <input type="number" id="settingBookingFeeInput" required>
+                <small style="color:var(--text-muted); font-size:0.75rem;">This reservation fee holds the table and is 100% deducted from the final food bill.</small>
+              </div>
+              <div class="form-control-item">
+                <label><i class="fa-solid fa-qrcode"></i> Restaurant UPI ID (For QR Code) *</label>
+                <input type="text" id="settingUpiIdInput" required>
+              </div>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-control-item">
+                <label><i class="fa-solid fa-phone"></i> Restaurant Phone Number *</label>
+                <input type="text" id="settingPhoneInput" required>
+              </div>
+              <div class="form-control-item">
+                <label><i class="fa-brands fa-whatsapp"></i> WhatsApp Number *</label>
+                <input type="text" id="settingWhatsappInput" required>
+              </div>
+            </div>
+
+            <div class="form-control-item">
+              <label><i class="fa-solid fa-clock"></i> Working & Dining Hours</label>
+              <input type="text" id="settingTimingsInput">
+            </div>
+
+            <div class="form-control-item">
+              <label><i class="fa-solid fa-bullhorn"></i> Top Announcement Banner Notice</label>
+              <input type="text" id="settingBannerInput">
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-control-item">
+                <label><i class="fa-solid fa-lock"></i> Change Admin Password (Optional)</label>
+                <input type="password" id="settingNewPassInput" placeholder="Enter new password to change">
+              </div>
+            </div>
+
+            <div style="margin-top:1.5rem;">
+              <button type="submit" class="btn btn-gold">
+                <i class="fa-solid fa-floppy-disk"></i> Save All Settings
+              </button>
+            </div>
+
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ==========================================================================
+       FOOTER SECTION
+       ========================================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        
+        <!-- Col 1: About Honeydew -->
+        <div class="footer-col">
+          <div class="brand-logo-area" style="margin-bottom:1rem;">
+            <div class="brand-emblem" style="width:40px; height:40px; font-size:1.1rem;">
+              <i class="fa-solid fa-crown"></i>
+            </div>
+            <div class="brand-text-block">
+              <h2 style="font-size:1.2rem;">Honeydew</h2>
+              <span style="font-size:0.7rem;">Restaurant • Ajmer</span>
+            </div>
+          </div>
+          <p style="font-size:0.85rem; line-height:1.6; color:#a8a29e; margin-bottom:1rem;">
+            Ajmer's most prestigious culinary landmark, located directly opposite Ajmer Junction Railway Station. A timeless harmony of authentic royal flavours, culinary purity, and warm hospitality.
+          </p>
+          <div style="display:flex; gap:0.6rem;">
+            <a href="tel:+919414012345" class="btn btn-outline-gold btn-sm"><i class="fa-solid fa-phone"></i> Call Us</a>
+            <a href="https://wa.me/919414012345" target="_blank" class="btn btn-maroon btn-sm"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#party-booking" style="color:#fef08a;"><i class="fa-solid fa-cake-candles"></i> Wedding & Party Halls</a></li>
+            <li><a href="#menu">🥩 Royal Non-Veg Menu</a></li>
+            <li><a href="#menu">🥦 Pure Vegetarian Menu</a></li>
+            <li><a href="#menu">🍮 Royal Sweets & Desserts</a></li>
+            <li><a href="#menu">🥤 Fresh Juices & Shakes</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Tourist Help -->
+        <div class="footer-col">
+          <h4>Party & Traveler Services</h4>
+          <ul>
+            <li><a href="#party-booking">Royal Wedding Feast Buffet</a></li>
+            <li><a href="#party-booking">Dhamaka Birthday Package</a></li>
+            <li><a href="#booking">Train Passenger Express Pre-Orders</a></li>
+            <li><a href="#booking">Family AC Hall Reservations</a></li>
+            <li><a href="/admin" style="color:#fef08a;"><i class="fa-solid fa-lock"></i> Manager Admin Portal (/admin)</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Timings & Location -->
+        <div class="footer-col">
+          <h4>Contact & Location</h4>
+          <p style="font-size:0.85rem; margin-bottom:0.5rem; color:#d6d3d1;">
+            <i class="fa-solid fa-location-dot" style="color:var(--primary-gold);"></i> 
+            Station Road, Ramganj, Opposite Ajmer Junction Station, Ajmer (Raj.) - 305001
+          </p>
+          <p style="font-size:0.85rem; margin-bottom:0.5rem; color:#d6d3d1;">
+            <i class="fa-solid fa-clock" style="color:var(--primary-gold);"></i> 
+            11:00 AM to 11:30 PM (Open All 7 Days)
+          </p>
+          <p style="font-size:0.85rem; color:#d6d3d1;">
+            <i class="fa-solid fa-qrcode" style="color:var(--primary-gold);"></i> 
+            UPI, Credit/Debit Cards & Cash Accepted
+          </p>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom-bar">
+        <div>
+          © 2026 Honeydew Restaurant, Ajmer. All rights reserved.
+        </div>
+        <div>
+          Dedicated to travelers, tourists & pilgrims • 
+          <a href="/admin" style="color:#f5e7a9; text-decoration:none; padding:3px 8px; border:1px solid rgba(212,175,55,0.4); border-radius:4px; margin-left:6px;" title="Admin Portal">
+            <i class="fa-solid fa-lock"></i> <strong>domain.com/admin</strong>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Master Data & Main App Script -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

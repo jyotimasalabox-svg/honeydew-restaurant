@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Portal | Honeydew Restaurant, Ajmer (domain.com/admin)</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Outfit:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- FontAwesome Icons 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    body {
+      background-color: #0f0d0b;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .admin-standalone-wrapper {
+      max-width: 1200px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+      width: 100%;
+      flex: 1;
+    }
+    .admin-standalone-card {
+      background: var(--bg-dark-card);
+      border: 1px solid var(--border-gold);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 20px 60px rgba(0,0,0,0.8);
+      overflow: hidden;
+    }
+    .admin-top-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1.25rem 2rem;
+      background: linear-gradient(90deg, #3f0909 0%, #1c1917 100%);
+      border-bottom: 1px solid var(--border-gold);
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Rose Petal Canvas (Optional background effect) -->
+  <canvas id="petalCanvas"></canvas>
+
+  <div class="admin-standalone-wrapper">
+    <div class="admin-standalone-card">
+      
+      <!-- Top Header Navigation -->
+      <div class="admin-top-bar">
+        <div style="display:flex; align-items:center; gap:0.85rem;">
+          <div style="width:44px; height:44px; border-radius:10px; background:var(--royal-maroon); border:2px solid var(--primary-gold); display:flex; align-items:center; justify-content:center; color:#fef08a; font-size:1.3rem;">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div>
+            <h2 style="font-size:1.35rem; color:#fff; line-height:1.2;">Honeydew Restaurant - Admin Portal</h2>
+            <span style="font-size:0.8rem; color:#f5e7a9;"><i class="fa-solid fa-link"></i> domain.com/admin</span>
+          </div>
+        </div>
+
+        <div style="display:flex; align-items:center; gap:0.75rem;">
+          <a href="/" class="btn btn-outline-gold btn-sm"><i class="fa-solid fa-house"></i> View Main Website</a>
+        </div>
+      </div>
+
+      <!-- VIEW 1: Login Form (If not authenticated) -->
+      <div id="adminLoginSection" style="padding:4rem 2rem; max-width:440px; margin:0 auto; text-align:center;">
+        <div style="width:70px; height:70px; border-radius:50%; background:rgba(212,175,55,0.15); border:2px solid var(--primary-gold); display:flex; align-items:center; justify-content:center; margin:0 auto 1.5rem; color:#fef08a; font-size:2rem;">
+          <i class="fa-solid fa-lock"></i>
+        </div>
+        <h3 style="font-size:1.5rem; color:#fff; margin-bottom:0.5rem;">Manager Authentication</h3>
+        <p style="font-size:0.9rem; color:var(--text-muted); margin-bottom:1.75rem;">
+          Sign in to access Honeydew Restaurant management dashboard.
+        </p>
+
+        <form id="standaloneLoginForm">
+          <div class="form-control-item" style="text-align:left; margin-bottom:1rem;">
+            <label for="adminUserField"><i class="fa-solid fa-user"></i> Username</label>
+            <input type="text" id="adminUserField" required placeholder="Enter username (Default: admin)">
+          </div>
+          <div class="form-control-item" style="text-align:left; margin-bottom:1.5rem;">
+            <label for="adminPassField"><i class="fa-solid fa-key"></i> Password</label>
+            <input type="password" id="adminPassField" required placeholder="Enter password (Default: admin123)">
+          </div>
+          <button type="submit" class="btn btn-gold" style="width:100%; font-size:1.05rem; padding:0.85rem;">
+            <i class="fa-solid fa-arrow-right-to-bracket"></i> Login to Dashboard
+          </button>
+        </form>
+      </div>
+
+      <!-- VIEW 2: Full Admin Dashboard (Shown after Login) -->
+      <div id="adminMainDashboard" style="display:none; padding:1.5rem;">
+        
+        <!-- Navigation Tabs -->
+        <div class="admin-nav-tabs">
+          <button class="admin-tab-btn active" data-tab="tab-bookings">
+            <i class="fa-solid fa-list-check"></i> Reservations (<span id="adminBookingBadge">0</span>)
+          </button>
+          <button class="admin-tab-btn" data-tab="tab-menu">
+            <i class="fa-solid fa-utensils"></i> Digital Menu Customizer
+          </button>
+          <button class="admin-tab-btn" data-tab="tab-settings">
+            <i class="fa-solid fa-sliders"></i> Pricing & General Settings
+          </button>
+          <button class="admin-tab-btn" id="standaloneLogoutBtn" style="margin-left:auto; color:#f87171;">
+            <i class="fa-solid fa-arrow-right-from-bracket"></i> Logout
+          </button>
+        </div>
+
+        <!-- TAB 1: Bookings Management -->
+        <div class="admin-tab-pane" id="tab-bookings" style="display:block; padding-top:1.5rem;">
+          
+          <!-- Statistics Cards -->
+          <div class="admin-stats-grid">
+            <div class="stat-card-box">
+              <div class="stat-icon"><i class="fa-solid fa-calendar-check"></i></div>
+              <div>
+                <div class="stat-num" id="statBookingsNum">0</div>
+                <div class="stat-label">Total Reservations</div>
+              </div>
+            </div>
+
+            <div class="stat-card-box">
+              <div class="stat-icon" style="color:#34d399;"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+              <div>
+                <div class="stat-num" id="statAdvanceNum">₹0</div>
+                <div class="stat-label">Advance Fees Collected</div>
+              </div>
+            </div>
+
+            <div class="stat-card-box">
+              <div class="stat-icon" style="color:#60a5fa;"><i class="fa-solid fa-users"></i></div>
+              <div>
+                <div class="stat-num" id="statGuestsNum">0</div>
+                <div class="stat-label">Total Reserved Guests</div>
+              </div>
+            </div>
+
+            <div class="stat-card-box">
+              <div class="stat-icon" style="color:#fbbf24;"><i class="fa-solid fa-file-csv"></i></div>
+              <div>
+                <button class="btn btn-outline-gold btn-sm" id="exportCsvBtn">
+                  <i class="fa-solid fa-download"></i> Download CSV
+                </button>
+                <div class="stat-label" style="margin-top:0.25rem;">Open in Microsoft Excel</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bookings Table -->
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Token ID</th>
+                  <th>Guest Name & Contact</th>
+                  <th>Date & Time Slot</th>
+                  <th>Guests & Area</th>
+                  <th>Order / Package Details</th>
+                  <th>Advance Fee</th>
+                  <th>Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody id="bookingsTableBody">
+                <!-- Dynamically populated via JS -->
+              </tbody>
+            </table>
+          </div>
+
+        </div>
+
+        <!-- TAB 2: Menu Customization -->
+        <div class="admin-tab-pane" id="tab-menu" style="display:none; padding-top:1.5rem;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.25rem; flex-wrap:wrap; gap:0.75rem;">
+            <h4 style="color:#fef08a; font-size:1.15rem;"><i class="fa-solid fa-bowl-food"></i> Dishes, Prices & Stock Status</h4>
+            <button class="btn btn-gold btn-sm" id="toggleAddDishBtn"><i class="fa-solid fa-plus"></i> Add New Dish</button>
+          </div>
+
+          <!-- Add Dish Form Drawer -->
+          <div id="addDishBox" style="display:none; background:var(--bg-dark-elevated); padding:1.25rem; border-radius:var(--radius-sm); border:1px solid var(--border-gold); margin-bottom:1.5rem;">
+            <h5 style="color:#fff; margin-bottom:1rem;">Add New Dish</h5>
+            <div class="form-group-row">
+              <div class="form-control-item">
+                <label>Dish Name *</label>
+                <input type="text" id="dishNameInp" placeholder="e.g. Royal Mutton Galouti Kebab">
+              </div>
+              <div class="form-control-item">
+                <label>Category *</label>
+                <select id="dishCatInp">
+                  <option value="nonveg">🥩 Royal Non-Veg</option>
+                  <option value="veg" selected>🥦 Pure Vegetarian</option>
+                  <option value="sweets">🍮 Royal Sweets & Desserts</option>
+                  <option value="juices">🥤 Fresh Juices & Shakes</option>
+                  <option value="tandoor">🔥 Tandoor & Breads</option>
+                  <option value="quick">🍱 Fast Meals & Combos</option>
+                </select>
+              </div>
+            </div>
+            <div class="form-group-row">
+              <div class="form-control-item">
+                <label>Dietary Type *</label>
+                <select id="dishTypeInp">
+                  <option value="veg">Pure Vegetarian (Veg)</option>
+                  <option value="non-veg">Non-Vegetarian (Non-Veg)</option>
+                </select>
+              </div>
+              <div class="form-control-item">
+                <label>Price (₹) *</label>
+                <input type="number" id="dishPriceInp" placeholder="320">
+              </div>
+            </div>
+            <div class="form-control-item">
+              <label>Description / Ingredients</label>
+              <input type="text" id="dishDescInp" placeholder="Special flavors, preparation style...">
+            </div>
+            <div class="form-control-item">
+              <label>Photo URL (Optional)</label>
+              <input type="text" id="dishImgInp" placeholder="https://images.unsplash.com/...">
+            </div>
+            <div style="display:flex; gap:0.5rem;">
+              <button class="btn btn-gold btn-sm" id="saveDishBtn"><i class="fa-solid fa-floppy-disk"></i> Save Dish</button>
+              <button class="btn btn-outline-gold btn-sm" id="cancelDishBtn">Cancel</button>
+            </div>
+          </div>
+
+          <!-- Existing Dishes List Table -->
+          <div class="admin-table-wrap">
+            <table class="admin-table">
+              <thead>
+                <tr>
+                  <th>Photo</th>
+                  <th>Dish Name</th>
+                  <th>Category</th>
+                  <th>Type</th>
+                  <th>Price (₹)</th>
+                  <th>Stock Status</th>
+                  <th>Delete</th>
+                </tr>
+              </thead>
+              <tbody id="menuTableBody">
+                <!-- Dynamically populated via JS -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- TAB 3: Restaurant Settings & Fee Control -->
+        <div class="admin-tab-pane" id="tab-settings" style="display:none; padding-top:1.5rem;">
+          <form id="standaloneSettingsForm" style="max-width:700px;">
+            <h4 style="color:#fef08a; font-size:1.15rem; margin-bottom:1.25rem;">
+              <i class="fa-solid fa-sliders"></i> Fees, UPI QR & Contact Settings
+            </h4>
+
+            <div class="form-group-row">
+              <div class="form-control-item">
+                <label><i class="fa-solid fa-indian-rupee-sign"></i> Advance Table Booking Fee (₹) *</label>
+                <input type="number" id="setFeeInp" required>
+                <small style="color:var(--text-muted); font-size:0.75rem;">This advance fee locks table allocation and is deducted from the final food bill.</small>
+              </div>
+              <div class="form-control-item">
+                <label><i class="fa-solid fa-qrcode"></i> Restaurant UPI ID (For QR Code) *</label>
+                <input type="text" id="setUpiInp" required>
+              </div>
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-control-item">
+                <label><i class="fa-solid fa-phone"></i> Contact Phone *</label>
+                <input type="text" id="setPhoneInp" required>
+              </div>
+              <div class="form-control-item">
+                <label><i class="fa-brands fa-whatsapp"></i> WhatsApp Number *</label>
+                <input type="text" id="setWaInp" required>
+              </div>
+            </div>
+
+            <div class="form-control-item">
+              <label><i class="fa-solid fa-clock"></i> Opening & Closing Hours</label>
+              <input type="text" id="setTimingsInp">
+            </div>
+
+            <div class="form-control-item">
+              <label><i class="fa-solid fa-bullhorn"></i> Top Announcement Banner Notice</label>
+              <input type="text" id="setBannerInp">
+            </div>
+
+            <div class="form-group-row">
+              <div class="form-control-item">
+                <label><i class="fa-solid fa-lock"></i> Change Admin Password (Optional)</label>
+                <input type="password" id="setNewPassInp" placeholder="Enter new password to change">
+              </div>
+            </div>
+
+            <div style="margin-top:1.5rem;">
+              <button type="submit" class="btn btn-gold">
+                <i class="fa-solid fa-floppy-disk"></i> Save All Settings
+              </button>
+            </div>
+          </form>
+        </div>
+
+      </div>
+
+    </div>
+  </div>
+
+  <footer style="text-align:center; padding:1.5rem; color:var(--text-muted); font-size:0.8rem;">
+    Honeydew Restaurant, Ajmer • Management Portal (domain.com/admin)
+  </footer>
+
+  <!-- Master Data & Script -->
+  <script src="data.js"></script>
+  <script>
+    // Standalone Admin Portal Script
+    let adminState = {
+      config: { ...HONEYDEW_DEFAULT_CONFIG },
+      menu: [...INITIAL_MENU_ITEMS],
+      bookings: [...SAMPLE_BOOKINGS],
+      isLoggedIn: false
+    };
+
+    document.addEventListener("DOMContentLoaded", () => {
+      loadData();
+      initEvents();
+    });
+
+    function loadData() {
+      const cfg = localStorage.getItem("honeydew_config");
+      if (cfg) try { adminState.config = { ...HONEYDEW_DEFAULT_CONFIG, ...JSON.parse(cfg) }; } catch(e){}
+      
+      const MENU_VERSION = "3.0";
+      const savedVersion = localStorage.getItem("honeydew_menu_version");
+      if (savedVersion === MENU_VERSION) {
+        const m = localStorage.getItem("honeydew_menu");
+        if (m) try { adminState.menu = JSON.parse(m); } catch(e){}
+      } else {
+        adminState.menu = [...INITIAL_MENU_ITEMS];
+        localStorage.setItem("honeydew_menu", JSON.stringify(adminState.menu));
+        localStorage.setItem("honeydew_menu_version", MENU_VERSION);
+      }
+
+      const b = localStorage.getItem("honeydew_bookings");
+      if (b) {
+        try {
+          const parsed = JSON.parse(b);
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            const hasParty = parsed.some(item => item.bookingType === "party");
+            if (!hasParty) {
+              adminState.bookings = [...parsed, ...SAMPLE_BOOKINGS.filter(s => s.bookingType === "party")];
+            } else {
+              adminState.bookings = parsed;
+            }
+          } else {
+            adminState.bookings = [...SAMPLE_BOOKINGS];
+          }
+        } catch(e){}
+      } else {
+        adminState.bookings = [...SAMPLE_BOOKINGS];
+      }
+
+      // Check if session was already active
+      if (sessionStorage.getItem("admin_session") === "true") {
+        adminState.isLoggedIn = true;
+        showDashboard();
+      }
+    }
+
+    function saveData() {
+      localStorage.setItem("honeydew_config", JSON.stringify(adminState.config));
+      localStorage.setItem("honeydew_menu", JSON.stringify(adminState.menu));
+      localStorage.setItem("honeydew_bookings", JSON.stringify(adminState.bookings));
+    }
+
+    function initEvents() {
+      // Login Form
+      const loginForm = document.getElementById("standaloneLoginForm");
+      loginForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        const u = document.getElementById("adminUserField").value.trim();
+        const p = document.getElementById("adminPassField").value.trim();
+
+        if (u === adminState.config.adminUser && p === adminState.config.adminPass) {
+          adminState.isLoggedIn = true;
+          sessionStorage.setItem("admin_session", "true");
+          showDashboard();
+        } else {
+          alert("Invalid username or password! Please enter correct credentials.");
+        }
+      });
+
+      // Logout
+      document.getElementById("standaloneLogoutBtn").addEventListener("click", () => {
+        adminState.isLoggedIn = false;
+        sessionStorage.removeItem("admin_session");
+        document.getElementById("adminLoginSection").style.display = "block";
+        document.getElementById("adminMainDashboard").style.display = "none";
+      });
+
+      // Tabs
+      document.querySelectorAll(".admin-tab-btn[data-tab]").forEach(btn => {
+        btn.addEventListener("click", () => {
+          document.querySelectorAll(".admin-tab-btn[data-tab]").forEach(b => b.classList.remove("active"));
+          btn.classList.add("active");
+          const targetId = btn.getAttribute("data-tab");
+          document.querySelectorAll(".admin-tab-pane").forEach(pane => pane.style.display = "none");
+          document.getElementById(targetId).style.display = "block";
+        });
+      });
+
+      // Settings Save
+      document.getElementById("standaloneSettingsForm").addEventListener("submit", (e) => {
+        e.preventDefault();
+        adminState.config.defaultBookingFee = parseInt(document.getElementById("setFeeInp").value) || 150;
+        adminState.config.upiId = document.getElementById("setUpiInp").value.trim();
+        adminState.config.phone = document.getElementById("setPhoneInp").value.trim();
+        adminState.config.whatsapp = document.getElementById("setWaInp").value.trim();
+        adminState.config.timings = document.getElementById("setTimingsInp").value.trim();
+        adminState.config.bannerNotice = document.getElementById("setBannerInp").value.trim();
+
+        const newPass = document.getElementById("setNewPassInp").value.trim();
+        if (newPass) adminState.config.adminPass = newPass;
+
+        saveData();
+        alert("✅ Settings saved successfully!");
+      });
+
+      // CSV Export
+      document.getElementById("exportCsvBtn").addEventListener("click", () => {
+        const headers = ["Booking ID", "Customer Name", "Phone", "Email", "Date", "Time Slot", "Guests", "Seating Area", "Pre-ordered Food", "Advance Fee", "Payment Status", "Timestamp"];
+        const rows = adminState.bookings.map(b => [
+          `"${b.bookingId}"`,
+          `"${b.customerName}"`,
+          `"${b.phone}"`,
+          `"${b.email || ''}"`,
+          `"${b.date}"`,
+          `"${b.timeSlot}"`,
+          `"${b.guests}"`,
+          `"${b.seatingArea}"`,
+          `"${(b.preOrderItems || []).map(i => `${i.name} (x${i.qty})`).join('; ')}"`,
+          `"${b.bookingFee}"`,
+          `"${b.paymentStatus}"`,
+          `"${b.timestamp}"`
+        ]);
+
+        const csvContent = "data:text/csv;charset=utf-8," + [headers.join(","), ...rows.map(e => e.join(","))].join("\n");
+        const encodedUri = encodeURI(csvContent);
+        const link = document.createElement("a");
+        link.setAttribute("href", encodedUri);
+        link.setAttribute("download", `honeydew_bookings_${new Date().toISOString().slice(0,10)}.csv`);
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+      });
+
+      // Add Dish
+      const addDishBox = document.getElementById("addDishBox");
+      document.getElementById("toggleAddDishBtn").addEventListener("click", () => addDishBox.style.display = "block");
+      document.getElementById("cancelDishBtn").addEventListener("click", () => addDishBox.style.display = "none");
+      document.getElementById("saveDishBtn").addEventListener("click", () => {
+        const name = document.getElementById("dishNameInp").value.trim();
+        const cat = document.getElementById("dishCatInp").value;
+        const type = document.getElementById("dishTypeInp").value;
+        const price = parseInt(document.getElementById("dishPriceInp").value);
+        const desc = document.getElementById("dishDescInp").value.trim();
+        const img = document.getElementById("dishImgInp").value.trim();
+
+        if (!name || isNaN(price)) {
+          alert("Please enter dish name and a valid price!");
+          return;
+        }
+
+        adminState.menu.unshift({
+          id: "dish-" + Date.now(),
+          name,
+          category: cat,
+          type,
+          price,
+          rating: 4.8,
+          reviews: 1,
+          badge: "New",
+          description: desc || "Honeydew Signature Dish",
+          image: img || "assets/dishes/dish-vg-1.jpg",
+          prepTime: "15 mins",
+          inStock: true
+        });
+
+        saveData();
+        renderMenuTable();
+        addDishBox.style.display = "none";
+        alert("✅ New dish added successfully!");
+      });
+    }
+
+    function showDashboard() {
+      document.getElementById("adminLoginSection").style.display = "none";
+      document.getElementById("adminMainDashboard").style.display = "block";
+      renderBookings();
+      renderMenuTable();
+      populateSettings();
+    }
+
+    function renderBookings() {
+      const tbody = document.getElementById("bookingsTableBody");
+      const badge = document.getElementById("adminBookingBadge");
+      const statTotal = document.getElementById("statBookingsNum");
+      const statAdvance = document.getElementById("statAdvanceNum");
+      const statGuests = document.getElementById("statGuestsNum");
+
+      badge.innerText = adminState.bookings.length;
+      statTotal.innerText = adminState.bookings.length;
+
+      let totalAdvance = 0;
+      let totalGuests = 0;
+      adminState.bookings.forEach(b => {
+        if (b.paymentStatus && b.paymentStatus.includes("Paid")) totalAdvance += (b.bookingFee || 0);
+        totalGuests += (b.guests || 0);
+      });
+
+      statAdvance.innerText = `₹${totalAdvance}`;
+      statGuests.innerText = totalGuests;
+
+      if (adminState.bookings.length === 0) {
+        tbody.innerHTML = `<tr><td colspan="8" style="text-align:center; padding:2rem; color:var(--text-muted);">No reservation records found.</td></tr>`;
+        return;
+      }
+
+      tbody.innerHTML = adminState.bookings.map(b => {
+        const isParty = b.bookingType === "party";
+        
+        let details = "";
+        if (isParty) {
+          details = `<strong>${b.packageName || 'Celebration Package'}</strong><br><small style="color:#d6d3d1;">Services: ${(b.services || []).join(', ') || 'Standard Included'}</small>`;
+        } else if (b.preOrderItems && b.preOrderItems.length > 0) {
+          details = b.preOrderItems.map(i => `${i.name} (x${i.qty})`).join(', ');
+        } else {
+          details = '<span style="color:var(--text-muted);">No pre-ordered food</span>';
+        }
+
+        const typeBadge = isParty 
+          ? `<span class="status-badge party" style="margin-bottom:0.25rem; display:inline-block;"><i class="fa-solid fa-cake-candles"></i> Wedding/Party</span>` 
+          : `<span class="status-badge confirmed" style="margin-bottom:0.25rem; display:inline-block;"><i class="fa-solid fa-chair"></i> Dining Table</span>`;
+
+        return `
+          <tr>
+            <td>
+              ${typeBadge}<br>
+              <strong>${b.bookingId}</strong><br>
+              <small style="color:var(--text-muted);">${b.timestamp}</small>
+            </td>
+            <td>
+              <strong>${b.customerName}</strong><br>
+              <a href="tel:${b.phone}" style="color:var(--primary-gold); font-size:0.8rem;"><i class="fa-solid fa-phone"></i> ${b.phone}</a><br>
+              <small style="color:#d6d3d1;">${b.email || b.trainDetails || ''}</small>
+            </td>
+            <td>${b.date}<br><strong>${b.timeSlot}</strong></td>
+            <td>
+              ${b.guests} Guests<br>
+              <small style="color:${isParty ? '#fef08a' : 'var(--text-muted)'};">${isParty ? (b.occasionTitle || 'Event') : b.seatingArea}</small>
+              ${isParty && b.venueName ? `<br><small style="color:#a8a29e;">${b.venueName}</small>` : ''}
+            </td>
+            <td style="max-width:200px; font-size:0.8rem;">${details}</td>
+            <td>
+              <strong>₹${b.bookingFee}</strong><br>
+              ${isParty && b.estimatedTotal ? `<small style="color:#d6d3d1;">Est. Total: ₹${b.estimatedTotal.toLocaleString('en-IN')}</small><br>` : ''}
+              <small style="color:${b.paymentStatus && b.paymentStatus.includes('Paid') ? '#34d399' : '#fbbf24'};">${b.paymentStatus}</small>
+            </td>
+            <td><span class="status-badge ${b.bookingStatus === 'Confirmed' ? 'confirmed' : 'pending'}">${b.bookingStatus}</span></td>
+            <td>
+              <div style="display:flex; gap:0.35rem;">
+                ${b.bookingStatus !== 'Confirmed' ? `
+                  <button class="btn btn-sm" style="background:#059669; color:#fff; padding:0.25rem 0.5rem;" title="Confirm" onclick="confirmBooking('${b.bookingId}')"><i class="fa-solid fa-check"></i></button>
+                ` : ''}
+                <button class="btn btn-sm" style="background:#dc2626; color:#fff; padding:0.25rem 0.5rem;" title="Delete" onclick="deleteBooking('${b.bookingId}')"><i class="fa-solid fa-trash"></i></button>
+              </div>
+            </td>
+          </tr>
+        `;
+      }).join('');
+    }
+
+    window.confirmBooking = function(id) {
+      const b = adminState.bookings.find(item => item.bookingId === id);
+      if (b) {
+        b.bookingStatus = "Confirmed";
+        b.paymentStatus = "Paid (Verified)";
+        saveData();
+        renderBookings();
+      }
+    };
+
+    window.deleteBooking = function(id) {
+      if (confirm("Are you sure you want to delete this reservation?")) {
+        adminState.bookings = adminState.bookings.filter(b => b.bookingId !== id);
+        saveData();
+        renderBookings();
+      }
+    };
+
+    function renderMenuTable() {
+      const tbody = document.getElementById("menuTableBody");
+      tbody.innerHTML = adminState.menu.map(dish => `
+        <tr>
+          <td><img src="${dish.image}" style="width:40px; height:40px; border-radius:6px; object-fit:cover;" alt="${dish.name}"></td>
+          <td><strong>${dish.name}</strong></td>
+          <td>${dish.category}</td>
+          <td><span class="diet-dot ${dish.type}" style="display:inline-flex; width:16px; height:16px;"></span></td>
+          <td>₹${dish.price}</td>
+          <td>
+            <button class="btn btn-sm ${dish.inStock ? 'btn-gold' : 'btn-maroon'}" style="padding:0.2rem 0.6rem; font-size:0.75rem;" onclick="toggleStock('${dish.id}')">
+              ${dish.inStock ? 'In Stock' : 'Out of Stock'}
+            </button>
+          </td>
+          <td>
+            <button class="btn btn-sm btn-maroon" style="padding:0.2rem 0.5rem;" onclick="deleteDish('${dish.id}')">
+              <i class="fa-solid fa-trash"></i>
+            </button>
+          </td>
+        </tr>
+      `).join('');
+    }
+
+    window.toggleStock = function(id) {
+      const d = adminState.menu.find(item => item.id === id);
+      if (d) {
+        d.inStock = !d.inStock;
+        saveData();
+        renderMenuTable();
+      }
+    };
+
+    window.deleteDish = function(id) {
+      if (confirm("Are you sure you want to remove this dish from the menu?")) {
+        adminState.menu = adminState.menu.filter(d => d.id !== id);
+        saveData();
+        renderMenuTable();
+      }
+    };
+
+    function populateSettings() {
+      const cfg = adminState.config;
+      document.getElementById("setFeeInp").value = cfg.defaultBookingFee || 150;
+      document.getElementById("setUpiInp").value = cfg.upiId || "";
+      document.getElementById("setPhoneInp").value = cfg.phone || "";
+      document.getElementById("setWaInp").value = cfg.whatsapp || "";
+      document.getElementById("setTimingsInp").value = cfg.timings || "";
+      document.getElementById("setBannerInp").value = cfg.bannerNotice || "";
+    }
+  </script>
+</body>
+</html>
